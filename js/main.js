@@ -23,15 +23,22 @@ $(document).ready(function () {
 //2. make a function which can change the img inside of the images class, by clicking on the prev arrow
      $(".prev").click(
        function prevImg() {
+        var activeCircle = $(".nav i.active");
+        activeCircle.removeClass("active");
+
         var imgActive = $("img.active");
         imgActive.removeClass("active");
 
-        if (imgActive.hasClass("last")) {
-          var imgNext = $("img.first");
+    if (imgActive.hasClass("last")) {
+       (activeCirlce.hasClass("last"))
+         var imgNext = $("img.first");
+         var circleNext = $(".nav i.first");
         } else {
-          var imgNext = imgActive.next();
-        }
-        imgNext.addClass("active");
+         var imgNext = imgActive.next();
+         var circleNext = activeCircle.next();
+         imgNext.addClass("active");
+         circleNext.addClass("active");
+       }
       }
-     );
+    );
 });
