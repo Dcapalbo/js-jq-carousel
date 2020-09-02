@@ -7,20 +7,17 @@ $(document).ready(function () {
 
         var imgActive = $("img.active");
         imgActive.removeClass("active");
-//2. condition for the img
-        if (imgActive.hasClass("last")) {
+
+    if (imgActive.hasClass("last")) {
+        (activeCirlce.hasClass("last"))
           var imgNext = $("img.first");
+          var circleNext = $(".nav i.first");
         } else {
           var imgNext = imgActive.next();
-        }
-        imgNext.addClass("active");
-//3. condition for the circles
-        if (activeCirlce.hasClass("last")) {
-          var circleNext = $("i.first")
-        } else {
           var circleNext = activeCircle.next();
+          imgNext.addClass("active");
+          circleNext.addClass("active");
         }
-        circleNext.addClass("active");
       }
      );
 //2. make a function which can change the img inside of the images class, by clicking on the prev arrow
