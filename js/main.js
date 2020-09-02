@@ -1,7 +1,30 @@
-$(document).ready(
-  function() {
+$(document).ready(function () {
 
-   $(".active first").removeClass("active first")
-     
-  }
-);
+     $(".next").click(
+       function() {
+        var imgActive = $("img.active");
+        imgActive.removeClass("active");
+
+        if (imgActive.hasClass("last")) {
+          var imgNext = $("img.first");
+        } else {
+          var imgNext = imgActive.next();
+        }
+        imgNext.addClass("active");
+      }
+     );
+
+     $(".prev").click(
+       function() {
+        var imgActive = $("img.active");
+        imgActive.removeClass("active");
+
+        if (imgActive.hasClass("last")) {
+          var imgNext = $("img.first");
+        } else {
+          var imgNext = imgActive.next();
+        }
+        imgNext.addClass("active");
+      }
+     );
+});
